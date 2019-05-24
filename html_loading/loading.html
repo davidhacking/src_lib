@@ -1,0 +1,36 @@
+<link href="css/loading.css" rel="stylesheet">
+<script type="text/javascript">
+    var startLoadingCount = 0;
+    var localRepoReversion = 0;
+    var startLoading = function () {
+        startLoadingCount++;
+        console.log('startLoading');
+        $("#loader").css('display', 'block');
+        $('body').addClass('bodyLoadingClass');
+        $("#loadingText").html("正在加载数据");
+    };
+    var closeLoading = function () {
+        startLoadingCount--;
+        console.log("startLoadingCount", startLoadingCount);
+        if (startLoadingCount > 0) {
+            return;
+        }
+        console.log('closeLoading');
+        $("#loadingText").html("");
+        $("#loader").css('display', 'none');
+        $('body').removeClass('bodyLoadingClass');
+    };
+    $(document).ready(function () {
+        startLoading();
+    });
+</script>
+<div class="wrapper" id="loader" style="z-index: 2048; width: 200px; text-align: center;">
+    <p id="loadingText" style="width: 200px; text-align: center; margin-left: -27px; color: red;"></p>
+    <div id="preloader_4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>

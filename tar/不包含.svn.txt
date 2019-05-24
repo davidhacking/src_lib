@@ -1,0 +1,1 @@
+tar --exclude='.svn' --exclude='.git' --exclude='*.pyc' --exclude='.idea' -zcvf server.tgz server

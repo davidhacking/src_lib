@@ -1,0 +1,1 @@
+rsync -rlptD --progress --exclude=.git --port=34527 192.168.45.130::g94_server_bin/ g94_server_bin
